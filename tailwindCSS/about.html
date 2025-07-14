@@ -1,0 +1,136 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>소개 페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans KR"', "sans-serif"],
+              heading: ['"Anton"', "sans-serif"],
+            },
+            colors: {
+              primary: "#1E40AF",
+              secondary: "#F59E0B",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="js/darkmode.js" defer></script>
+  </head>
+  <body
+    class="min-h-screen flex flex-col font-sans bg-white text-black dark:bg-gray-900 dark:text-white"
+  >
+    <!-- 헤더 -->
+    <header>
+      <nav
+        class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-3 bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-md rounded-b-lg z-50"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="images/bono.jpg"
+            alt="로고"
+            class="w-8 h-8 rounded-full border-2 border-secondary shadow-sm"
+          />
+          <a
+            href="index.html"
+            class="text-white font-semibold text-lg tracking-wide select-none"
+            >myPortfolio</a
+          >
+        </div>
+        <ul class="flex gap-5">
+          <li>
+            <a
+              href="index.html"
+              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="px-3 py-1 rounded-lg text-sm font-semibold text-white bg-secondary shadow-md hover:bg-yellow-400 hover:text-gray-900 transition"
+              >Anbout</a
+            >
+          </li>
+          <li>
+            <a
+              href="portfolio.html"
+              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
+              >Portfolio</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="contact.html"
+              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
+              >contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section
+      id="hero"
+      class="bg-cover bg-center h-[280px] pt-32 px-12 text-secondary dark:bg-gray-800 flex flex-col justify-center"
+      style="background-image: url('images/sky.jpg')"
+    >
+      <h1 class="text-4xl font-heading">소개</h1>
+      <p class="mt-4 text-lg">저를 간단히 소개합니다.</p>
+    </section>
+
+    <!-- 소개 섹션 (박스 형태) -->
+    <main class="flex-grow p-8 max-w-4xl mx-auto">
+      <div
+        class="p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
+      >
+        <h2 class="text-2xl font-bold mb-4">안녕하세요! 👋</h2>
+        <p class="mb-3 leading-relaxed">
+          백엔드 개발자가 되기 위해 Java와 Spring Boot를 중심으로 학습하고
+          있으며, 실무에 가까운 프로젝트를 통해 경험을 쌓고자 노력하고 있습니다.
+        </p>
+        <p class="mb-3 leading-relaxed">
+          아직 부족한 점도 많지만, 혼자만의 공부에서 벗어나 팀 프로젝트를
+          경험하며 협업의 중요성과 서비스 개발의 전체 흐름을 이해하려고 애쓰고
+          있습니다.
+        </p>
+        <p class="leading-relaxed">
+          앞으로는 사용자 중심의 서비스를 설계하고, 동료들과 함께 더 나은 방향을
+          고민할 수 있는 개발자로 성장하고 싶습니다. 아직은 시작 단계이지만,
+          하루하루 꾸준히 실력을 다져가고 있습니다.
+        </p>
+      </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer
+      class="bg-gray-900 bg-opacity-80 backdrop-blur-sm text-white text-center py-2 px-4 rounded-t-lg shadow-inner mt-12"
+    >
+      <p>e-mail: dohun1109@naver.com</p>
+      <small>© 2025 나의 포트폴리오</small>
+    </footer>
+
+    <!-- 다크모드 토글 버튼 -->
+    <button
+      id="darkModeToggle"
+      class="fixed bottom-20 right-6 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-700 transition"
+    >
+      🌙 다크모드
+    </button>
+  </body>
+</html>

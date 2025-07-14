@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans KR"', "sans-serif"],
+              heading: ['"Anton"', "sans-serif"],
+            },
+            colors: {
+              primary: "#1E40AF",
+              secondary: "#F59E0B",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="js/darkmode.js" defer></script>
+  </head>
+
+  <body class="font-sans bg-white text-black dark:bg-gray-900 dark:text-white">
+    <!-- 헤더 -->
+    <header>
+      <nav
+        class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-3 bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-md rounded-b-lg z-50"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="images/bono.jpg"
+            alt="로고"
+            class="w-8 h-8 rounded-full border-2 border-secondary shadow-sm"
+          />
+          <a
+            href="index.html"
+            class="text-white font-semibold text-lg tracking-wide select-none"
+            >myPortfolio</a
+          >
+        </div>
+        <ul class="flex gap-5">
+          <li>
+            <a
+              href="index.html"
+              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="portfolio.html"
+              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="px-3 py-1 rounded-lg text-sm font-semibold text-white bg-secondary shadow-md hover:bg-yellow-400 hover:text-gray-900 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section
+      id="hero"
+      class="bg-cover bg-center h-[280px] pt-32 px-12 text-secondary dark:bg-gray-800 flex flex-col justify-center"
+      style="background-image: url('images/sky.jpg')"
+    >
+      <h1 class="text-4xl font-heading">연락하기</h1>
+      <p class="mt-4 text-lg">
+        궁금한 점이 있다면 언제든지 메시지를 보내주세요!
+      </p>
+    </section>
+
+    <!-- 연락 폼 -->
+    <main class="flex-grow p-8 max-w-xl mx-auto">
+      <form
+        action="https://formsubmit.co/dohun1109@naver.com"
+        method="POST"
+        class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-2xl transition duration-300"
+      >
+        <!-- 보안 필드 -->
+        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display: none" />
+
+        <div>
+          <label for="name" class="block mb-1 font-semibold">이름</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            class="w-full p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600"
+          />
+        </div>
+        <div>
+          <label for="email" class="block mb-1 font-semibold">이메일</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="w-full p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600"
+          />
+        </div>
+        <div>
+          <label for="message" class="block mb-1 font-semibold">메시지</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            required
+            class="w-full p-2 rounded border border-gray-300 dark:bg-gray-700 dark:border-gray-600"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+        >
+          보내기
+        </button>
+      </form>
+    </main>
+
+    <!-- 푸터 -->
+    <footer
+      class="bg-gray-900 bg-opacity-80 backdrop-blur-sm text-white text-center py-2 px-4 rounded-t-lg shadow-inner mt-12"
+    >
+      <p>e-mail: dohun1109@naver.com</p>
+      <small>© 2025 나의 포트폴리오</small>
+    </footer>
+
+    <!-- 다크모드 토글 버튼 -->
+    <button
+      id="darkModeToggle"
+      class="fixed bottom-20 right-6 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-700 transition"
+    >
+      🌙 다크모드
+    </button>
+  </body>
+</html>
