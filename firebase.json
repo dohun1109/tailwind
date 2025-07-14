@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "TAILWINDCSS",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

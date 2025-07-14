@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("mode", isDark ? "dark" : "light");
+      const isDark = document.documentElement.classList.toggle("dark"); //dark클래스가 없으면 추가하고 true , 있으면 제거하고 false
+      localStorage.setItem("mode", isDark ? "dark" : "light"); //하위페이지에서도 상태유지되도록 localStorage에 저장
       toggleBtn.innerText = isDark ? "☀️ 라이트모드" : "🌙 다크모드";
     });
   }
