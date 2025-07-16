@@ -1,0 +1,40 @@
+<!-- about.html -->
+
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홈페이지 - 소개</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+      import { renderHeader } from "./components/header.js";
+      import { renderNav } from "./components/nav.js";
+      import { renderFooter } from "./components/footer.js";
+
+      document.getElementById("header").innerHTML = renderHeader();
+      document.getElementById("nav").innerHTML = renderNav("about");
+      document.getElementById("footer").innerHTML = renderFooter();
+    </script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- 헤더 -->
+    <div id="header"></div>
+
+    <!-- 네비게이션 -->
+    <div id="nav"></div>
+
+    <!-- 본문 -->
+    <main class="flex-grow p-6">
+      <h2 class="text-xl font-semibold mb-4">소개 페이지입니다</h2>
+      <p class="text-gray-700">
+        이 사이트에 대해 간단히 소개합니다. 반갑습니다!
+      </p>
+    </main>
+
+    <!-- 푸터 -->
+    <div id="footer"></div>
+  </body>
+</html>

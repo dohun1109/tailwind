@@ -1,4 +1,3 @@
-<!-- portfolio.html -->
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -6,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>나의 포트폴리오</title>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <link
@@ -14,10 +12,9 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind 설정 -->
     <script>
       tailwind.config = {
-        darkMode: "class", // 다크 모드 클래스 기반
+        darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
@@ -33,63 +30,22 @@
       };
     </script>
 
-    <!-- 다크모드 토글 스크립트 -->
     <script src="js/darkmode.js" defer></script>
+    <script type="module">
+      import { renderHeader } from "./components/header.js";
+      import { renderFooter } from "./components/footer.js";
+
+      document.getElementById("header-container").innerHTML =
+        renderHeader("portfolio");
+      document.getElementById("footer-container").innerHTML = renderFooter();
+    </script>
   </head>
 
   <body
     class="min-h-screen flex flex-col font-sans bg-white text-black dark:bg-gray-900 dark:text-white"
   >
     <!-- 헤더 -->
-    <header>
-      <nav
-        class="fixed top-0 left-0 right-0 flex items-center justify-between px-6 py-3 bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-md rounded-b-lg z-50"
-      >
-        <div class="flex items-center gap-3">
-          <img
-            src="images/bono.jpg"
-            alt="로고"
-            class="w-8 h-8 rounded-full border-2 border-secondary shadow-sm"
-          />
-          <a
-            href="index.html"
-            class="text-white font-semibold text-lg tracking-wide select-none"
-            >myPortfolio</a
-          >
-        </div>
-        <ul class="flex gap-5">
-          <li>
-            <a
-              href="index.html"
-              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="about.html"
-              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
-              >Anbout</a
-            >
-          </li>
-          <li>
-            <a
-              href="portfolio.html"
-              class="px-3 py-1 rounded-lg text-sm font-semibold text-white bg-secondary shadow-md hover:bg-yellow-400 hover:text-gray-900 transition"
-              >Portfolio</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="contact.html"
-              class="px-3 py-1 rounded-lg text-sm text-white bg-gray-800 shadow-sm transition hover:bg-secondary hover:text-white hover:shadow-md"
-              >contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div id="header-container"></div>
 
     <!-- 히어로 섹션 -->
     <section
@@ -130,25 +86,10 @@
           <h3 class="text-xl font-semibold mb-2">프로젝트 B</h3>
           <p>프로젝트 B에 대한 설명과 제가 맡은 역할을 여기에 작성하세요.</p>
         </article>
-
-        <!-- 필요하면 프로젝트 추가 가능 -->
       </section>
     </main>
 
     <!-- 푸터 -->
-    <footer
-      class="bg-gray-900 bg-opacity-80 backdrop-blur-sm text-white text-center py-2 px-4 rounded-t-lg shadow-inner mt-12"
-    >
-      <p>e-mail: dohun1109@naver.com</p>
-      <small>© 2025 나의 포트폴리오</small>
-    </footer>
-
-    <!-- 다크모드 토글 버튼 -->
-    <button
-      id="darkModeToggle"
-      class="fixed bottom-20 right-6 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg hover:bg-gray-700 transition"
-    >
-      🌙 다크모드
-    </button>
+    <div id="footer-container"></div>
   </body>
 </html>
