@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택 과제 실습</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6"
+  >
+    <div class="bg-white rounded-xl shadow-md p-8 max-w-md w-full">
+      <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        📝 선택 과제 실습
+      </h1>
+
+      <!-- 버튼 기능 -->
+      <button
+        id="delayBtn"
+        class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition mb-4"
+      >
+        3초 후 알림 띄우기
+      </button>
+
+      <!-- fetch 기능 -->
+      <button
+        id="fetchBtn"
+        class="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
+      >
+        게시글 정보 콘솔에 출력
+      </button>
+
+      <!-- 게시글 정보가 표시될 영역 -->
+      <div id="postContainer" class="mt-4 p-4 bg-gray-50 rounded-lg hidden">
+        <!-- 게시글 정보가 여기에 표시됩니다 -->
+      </div>
+
+      <p class="text-sm text-gray-500 mt-6 text-center">
+        F12 개발자 도구 콘솔을 열어보세요.
+      </p>
+    </div>
+
+    <script>
+      // 1
+      const btn = document.getElementById("delayBtn");
+      btn.addEventListener("click", () => {
+        setTimeout(() => {
+          alert("3초가 지났습니다!");
+        }, 3000);
+      });
+
+      // 2
+      fetch("https://jsonplaceholder.typicode.com/posts/2")
+        .then((res) => res.json())
+        .then((post) => console.log(post));
+      // 2. 게시글 정보 fetch 및 HTML 출력
+      const fetchBtn = document.getElementById("fetchBtn");
+      const postContainer = document.getElementById("postContainer");
+
+      fetchBtn.addEventListener("click", () => {
+        fetch("https://jsonplaceholder.typicode.com/posts/2")
+          .then((res) => res.json())
+          .then((post) => {
+            // 콘솔에도 출력
+            console.log(post);
+
+            // 화면에 표시
+            postContainer.classList.remove("hidden");
+            postContainer.innerHTML = `
+            <h2 class="font-bold mb-2">제목: ${post.title}</h2>
+            <p class="mb-2">내용: ${post.body}</p>
+            <p class="text-gray-500">글 번호: ${post.id}</p>
+          `;
+          })
+          .catch((err) => {
+            postContainer.classList.remove("hidden");
+            postContainer.innerHTML = `<p class="text-red-500">에러 발생: ${err.message}</p>`;
+          });
+      });
+    </script>
+  </body>
+</html>
